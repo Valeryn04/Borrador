@@ -9,12 +9,15 @@ package com.mycompany.ventanaagroclientes;
  * @author valec
  */
 public class JFrameConsultarAdmin extends javax.swing.JFrame {
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFrameConsultarAdmin.class.getName());
 
     /**
      * Creates new form JFrameConsultarAdmin
      */
     public JFrameConsultarAdmin() {
         initComponents();
+        setTitle("Consultar Administradores");
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -26,21 +29,157 @@ public class JFrameConsultarAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        textFieldDocumento = new java.awt.TextField();
+        textArea1 = new java.awt.TextArea();
+        btnConsultar = new java.awt.Button();
+        btnVolver = new java.awt.Button();
+        btnListarTodos = new java.awt.Button();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        textFieldDocumento.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+
+        textArea1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+
+        btnConsultar.setLabel("Consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
+
+        btnVolver.setLabel("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+
+        btnListarTodos.setLabel("Listar Todos");
+        btnListarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarTodosActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 20)); // NOI18N
+        jLabel1.setText("Consultar Administradores");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Número de Documento:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textFieldDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnListarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 55, Short.MAX_VALUE))
+                    .addComponent(textArea1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(25, 25, 25)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textFieldDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnListarTodos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(textArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        consultarAdministrador();
+    }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnListarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarTodosActionPerformed
+        listarTodosLosAdministradores();
+    }//GEN-LAST:event_btnListarTodosActionPerformed
+
+    private void consultarAdministrador() {
+        String numeroDocumento = textFieldDocumento.getText().trim();
+
+        if (numeroDocumento.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor ingresa el número de documento.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Administrador admin = RepositorioAdministrador.buscarPorDocumento(numeroDocumento);
+
+        if (admin != null) {
+            String info = "=== INFORMACIÓN DEL ADMINISTRADOR ===\n\n"
+                        + "Nombre: " + admin.getNombre() + "\n"
+                        + "Apellido: " + admin.getApellido() + "\n"
+                        + "Tipo Documento: " + admin.getTipoDocumento() + "\n"
+                        + "Número Documento: " + admin.getNumeroDocumento() + "\n"
+                        + "Teléfono: " + admin.getTelefono() + "\n";
+            textArea1.setText(info);
+        } else {
+            textArea1.setText("No se encontró un administrador con el documento: " + numeroDocumento);
+        }
+    }
+
+    private void listarTodosLosAdministradores() {
+        List<Administrador> administradores = RepositorioAdministrador.obtenerTodos();
+
+        if (administradores.isEmpty()) {
+            textArea1.setText("No hay administradores registrados en el sistema.");
+        } else {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== LISTA DE TODOS LOS ADMINISTRADORES ===\n\n");
+            sb.append("Total de administradores: ").append(administradores.size()).append("\n\n");
+
+            int contador = 1;
+            for (Administrador admin : administradores) {
+                sb.append("--- Administrador #").append(contador).append(" ---\n");
+                sb.append("Nombre: ").append(admin.getNombre()).append("\n");
+                sb.append("Apellido: ").append(admin.getApellido()).append("\n");
+                sb.append("Tipo Doc: ").append(admin.getTipoDocumento()).append("\n");
+                sb.append("Documento: ").append(admin.getNumeroDocumento()).append("\n");
+                sb.append("Teléfono: ").append(admin.getTelefono()).append("\n\n");
+                contador++;
+            }
+
+            textArea1.setText(sb.toString());
+        }
+
+        // Limpiar campo de búsqueda
+        textFieldDocumento.setText("");
+    }
 
     /**
      * @param args the command line arguments
@@ -58,25 +197,22 @@ public class JFrameConsultarAdmin extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameConsultarAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameConsultarAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameConsultarAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameConsultarAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrameConsultarAdmin().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new JFrameConsultarAdmin().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button btnConsultar;
+    private java.awt.Button btnListarTodos;
+    private java.awt.Button btnVolver;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private java.awt.TextArea textArea1;
+    private java.awt.TextField textFieldDocumento;
     // End of variables declaration//GEN-END:variables
 }
