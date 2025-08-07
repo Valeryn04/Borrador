@@ -1,7 +1,6 @@
 package com.mycompany.ventanaagroclientes;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import com.mycompany.ventanaagroclientes.vista.JFramePrincipal;
 
 /**
  *
