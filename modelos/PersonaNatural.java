@@ -6,11 +6,11 @@ package com.mycompany.ventanaagroclientes.modelos;
  * @author valec
  */
     public abstract class PersonaNatural {
-    protected String nombre;
-    protected String apellido;
-    protected String telefono;
-    protected String tipoDocumento;
-    protected String numeroDocumento;
+    private String nombre;
+    private String apellido;
+    private String telefono;
+    private String tipoDocumento;
+    private String numeroDocumento;
 
     public PersonaNatural(String nombre, String apellido, String telefono, String tipoDocumento, String numeroDocumento) {
         this.nombre = nombre;
@@ -31,6 +31,10 @@ package com.mycompany.ventanaagroclientes.modelos;
     public String getTelefono() {
         return telefono;
     }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
     
      public String getTipoDocumento() {
         return tipoDocumento;
@@ -49,4 +53,5 @@ package com.mycompany.ventanaagroclientes.modelos;
         return getNombreCompleto() + " - Documento: " + numeroDocumento;
     }
 }
+
 
