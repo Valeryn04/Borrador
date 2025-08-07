@@ -9,9 +9,13 @@ package com.mycompany.ventanaagroclientes;
  * @author valec
  */
 public class JFrameAdministrarAdmin extends javax.swing.JFrame {
-
+    
+    private final JFrameCrearAdmin crearAdminFrame = new JFrameCrearAdmin();
+    private final JFrameEliminarAdmin eliminarAdminFrame = new JFrameEliminarAdmin();
+    private final JFrameConsultarAdmin consultarAdminFrame = new JFrameConsultarAdmin();
+    
     /**
-     * Creates new form JFrameAdministrarAdmin
+     * Creates new form JFrameAdministrarAdministradores
      */
     public JFrameAdministrarAdmin() {
         initComponents();
@@ -33,74 +37,103 @@ public class JFrameAdministrarAdmin extends javax.swing.JFrame {
         jToggleButtonVolver = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Administrar Administradores");
 
         label1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         label1.setText("Administrar Administradores");
 
-        jButtonCrearAdmin.setLabel("Crear Administradores");
+        jButtonCrearAdmin.setLabel("Crear Administrador");
         jButtonCrearAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCrearAdminActionPerformed(evt);
             }
         });
 
-        jButtonEliminarAdmin.setLabel("Eliminar Administradores");
+        jButtonEliminarAdmin.setLabel("Eliminar Administrador");
+        jButtonEliminarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarAdminActionPerformed(evt);
+            }
+        });
 
-        jButtonConsultarAdmin.setLabel("Consultar Administradores");
+        jButtonConsultarAdmin.setLabel("Consultar Administrador");
+        jButtonConsultarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultarAdminActionPerformed(evt);
+            }
+        });
 
         jToggleButtonVolver.setText("Volver");
+        jToggleButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jButtonCrearAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jButtonConsultarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(jButtonEliminarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButtonVolver)
-                .addGap(16, 16, 16))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 53, Short.MAX_VALUE)
-                .addComponent(jButtonCrearAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
-                .addComponent(jButtonConsultarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jButtonEliminarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jToggleButtonVolver)
+                        .addGap(16, 16, 16))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(22, 22, 22)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonCrearAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCrearAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jButtonConsultarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonConsultarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jButtonEliminarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButtonEliminarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(jToggleButtonVolver)
                 .addGap(19, 19, 19))
         );
 
         pack();
+        setLocationRelativeTo(null); // Centrar la ventana
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonCrearAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearAdminActionPerformed
-        crearClienteFrame.setVisible(true);
-    }//GEN-LAST:event_jButtonCrearAdminActionPerformed
+    private void jButtonCrearAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearAdministradorActionPerformed
+        crearAdminFrame.setVisible(true);
+        crearAdminFrame.toFront();
+    }//GEN-LAST:event_jButtonCrearAdministradorActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButtonEliminarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarAdministradorActionPerformed
+        eliminarAdminFrame.setVisible(true);
+        eliminarAdminFrame.toFront();
+    }//GEN-LAST:event_jButtonEliminarAdministradorActionPerformed
+
+    private void jButtonConsultarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarAdministradoresActionPerformed
+        consultarAdminFrame.setVisible(true);
+        consultarAdminFrame.toFront();
+    }//GEN-LAST:event_jButtonConsultarAdministradoresActionPerformed
+
+    private void jToggleButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonVolverActionPerformed
+        this.dispose(); // Cierra esta ventana
+    }//GEN-LAST:event_jToggleButtonVolverActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -133,7 +166,7 @@ public class JFrameAdministrarAdmin extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+// Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button jButtonConsultarAdmin;
     private java.awt.Button jButtonCrearAdmin;
     private java.awt.Button jButtonEliminarAdmin;
@@ -141,3 +174,4 @@ public class JFrameAdministrarAdmin extends javax.swing.JFrame {
     private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }
+
