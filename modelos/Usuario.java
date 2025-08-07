@@ -36,16 +36,13 @@ public class Usuario {
     }
 
     public String getTipoUsuario() {
-        if (persona instanceof Administrador) {
-            return "ADMINISTRADOR";
-        } else if (persona instanceof Cliente) {
-            return "COMPRADOR";
-        }
+        if (persona == null) return "NO DEFINIDO";
+        if (persona instanceof Administrador) return "ADMINISTRADOR";
+        if (persona instanceof Cliente) return "COMPRADOR";
         return "DESCONOCIDO";
     }
 
-    // Setters
-    public void setNombreUsuario(String nombreUsuario) {
+   public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
 
