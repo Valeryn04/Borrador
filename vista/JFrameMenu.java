@@ -10,10 +10,11 @@ package com.mycompany.ventanaagroclientes.vista;
  */
 public class JFrameMenu extends javax.swing.JFrame {
     
-     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFrameMenu.class.getName());
-    private JFrameCliente frame = new JFrameCliente();
-    private JFrameAdmin frame2 = new JFrameAdmin();
-
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFrameMenu.class.getName());
+    private JFrameAministrarCliente frameCliente = new JFrameAministrarCliente();
+    private JFrameAdmin frameAdmin = new JFrameAdmin();
+    private JFramePedido framePedido = new JFramePedido();
+    private JFrameProducto frameProducto = new JFrameProducto();
     /**
      * Creates new form JFrameMenu
      */
@@ -34,12 +35,15 @@ public class JFrameMenu extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         btnClientes = new java.awt.Button();
         btnAdmin = new java.awt.Button();
+        btnPedido = new java.awt.Button();
+        btnProducto = new java.awt.Button();
         btnSalir = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Gestión Agro - Menú Principal");
 
         label1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        label1.setText("Bienvenido/a");
+        label1.setText("Bienvenido/a al Sistema");
 
         btnClientes.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnClientes.setLabel("Clientes");
@@ -57,6 +61,22 @@ public class JFrameMenu extends javax.swing.JFrame {
             }
         });
 
+        btnPedido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnPedido.setLabel("Pedidos");
+        btnPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPedidoActionPerformed(evt);
+            }
+        });
+
+        btnProducto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnProducto.setLabel("Productos");
+        btnProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProductoActionPerformed(evt);
+            }
+        });
+
         btnSalir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnSalir.setLabel("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -70,33 +90,50 @@ public class JFrameMenu extends javax.swing.JFrame {
         panelContenedorLayout.setHorizontalGroup(
             panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContenedorLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                .addGap(50, 50, 50)
+                .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    // Primera fila de botones
+                    .addGroup(panelContenedorLayout.createSequentialGroup()
+                        .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    // Segunda fila de botones
+                    .addGroup(panelContenedorLayout.createSequentialGroup()
+                        .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
+            // Título centrado
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContenedorLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145))
+                .addGap(0, 0, Short.MAX_VALUE))
+            // Botón salir centrado
             .addGroup(panelContenedorLayout.createSequentialGroup()
-                .addGap(194, 194, 194)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+        
         panelContenedorLayout.setVerticalGroup(
             panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContenedorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelContenedorLayout.createSequentialGroup()
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
+                .addGap(20, 20, 20)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                // Primera fila de botones
+                .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                // Segunda fila de botones
+                .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                // Botón salir
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -105,7 +142,8 @@ public class JFrameMenu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,6 +154,7 @@ public class JFrameMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null); // Centrar la ventana
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -123,17 +162,25 @@ public class JFrameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
-        frame2.setVisible(true);
+        frameAdmin.setVisible(true);
     }//GEN-LAST:event_btnAdminActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        frame.setVisible(true);
+        frameCliente.setVisible(true);
     }//GEN-LAST:event_btnClientesActionPerformed
+
+    private void btnPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidoActionPerformed
+        framePedido.setVisible(true);
+    }//GEN-LAST:event_btnPedidoActionPerformed
+
+    private void btnProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoActionPerformed
+        frameProducto.setVisible(true);
+    }//GEN-LAST:event_btnProductoActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+   public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -158,17 +205,17 @@ public class JFrameMenu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
- java.awt.EventQueue.invokeLater(() -> new JFrameMenu().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new JFrameMenu().setVisible(true));
     }
-    
-
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button btnAdmin;
     private java.awt.Button btnClientes;
+    private java.awt.Button btnPedido;
+    private java.awt.Button btnProducto;
     private java.awt.Button btnSalir;
     private java.awt.Label label1;
     private javax.swing.JPanel panelContenedor;
     // End of variables declaration//GEN-END:variables
+}
 }
