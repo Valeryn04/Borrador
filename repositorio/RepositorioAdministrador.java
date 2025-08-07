@@ -13,13 +13,13 @@ import java.util.List;
  * @author valec
  */
 public class RepositorioAdministrador {
-   private static ArrayList<Administrador> listaAdministradores = new ArrayList<>();
+   private static List<Administrador> listaAdministradores = new ArrayList<>();
     
     public static void agregarAdministrador(Administrador admin) {
         listaAdministradores.add(admin);
     }
 
-    public static ArrayList<Administrador> obtenerTodos() {
+    public static List<Administrador> obtenerTodos() {
         return listaAdministradores;
     }
 
@@ -33,11 +33,7 @@ public class RepositorioAdministrador {
     }
 
     public static boolean eliminarPorDocumento(String documento) {
-        Administrador admin = buscarPorDocumento(documento);
-        if (admin != null) {
-            listaAdministradores.remove(admin);
-            return true;
-        }
-        return false;
+        return listaAdministradores.removeIf(admin -> admin.getNumeroDocumento().equals(documento));
     }
+
 }
