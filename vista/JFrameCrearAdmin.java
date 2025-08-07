@@ -10,6 +10,8 @@ package com.mycompany.ventanaagroclientes;
  */
 public class JFrameCrearAdmin extends javax.swing.JFrame {
 
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JFrameCrearAdmin.class.getName());
+
     /**
      * Creates new form JFrameCrearAdmin
      */
@@ -26,21 +28,181 @@ public class JFrameCrearAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jNombre = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jComboTipo = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        btnRegistroAdmin = new javax.swing.JButton();
+        jApellido = new javax.swing.JTextField();
+        jDoc = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTel = new javax.swing.JTextField();
+        btnVolver = new java.awt.Button();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Crear Administrador");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Nombre");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setText("Apellido");
+
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel2.setText("Registro Administradores");
+
+        jNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("Tipo Doc");
+
+        jComboTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jComboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CC", "TI", "CE" }));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Documento");
+
+        btnRegistroAdmin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnRegistroAdmin.setText("Registrar");
+        btnRegistroAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroAdminActionPerformed(evt);
+            }
+        });
+
+        jApellido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jDoc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setText("Teléfono");
+
+        jTel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        btnVolver.setLabel("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTel, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel2))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(btnRegistroAdmin)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)))
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addComponent(btnRegistroAdmin)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null); // Centrar la ventana
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistroAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroAdminActionPerformed
+        String nombre = jNombre.getText().trim();
+        String apellido = jApellido.getText().trim();
+        String tipoDoc = jComboTipo.getSelectedItem().toString();
+        String documento = jDoc.getText().trim();
+        String telefono = jTel.getText().trim();
+
+        // Validar campos vacíos
+        if (nombre.isEmpty() || apellido.isEmpty() || documento.isEmpty() || telefono.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor completa todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Verificar si ya existe un administrador con ese documento
+        Administrador existente = RepositorioAdministrador.buscarPorDocumento(documento);
+        if (existente != null) {
+            JOptionPane.showMessageDialog(this, "Ya existe un administrador con ese documento.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Crear el administrador
+        Administrador administrador = new Administrador(nombre, apellido, telefono, tipoDoc, documento);
+
+        // Guardar en el repositorio
+        RepositorioAdministrador.agregarAdministrador(administrador);
+
+        // Mostrar mensaje
+        JOptionPane.showMessageDialog(this, "Administrador registrado con éxito.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+        // Limpiar campos
+        limpiarCampos();
+    }//GEN-LAST:event_btnRegistroAdminActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void limpiarCampos() {
+        jNombre.setText("");
+        jApellido.setText("");
+        jDoc.setText("");
+        jTel.setText("");
+        jComboTipo.setSelectedIndex(0);
+    }
 
     /**
      * @param args the command line arguments
@@ -58,25 +220,28 @@ public class JFrameCrearAdmin extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameCrearAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameCrearAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameCrearAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameCrearAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrameCrearAdmin().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new JFrameCrearAdmin().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistroAdmin;
+    private java.awt.Button btnVolver;
+    private javax.swing.JTextField jApellido;
+    private javax.swing.JComboBox<String> jComboTipo;
+    private javax.swing.JTextField jDoc;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField jNombre;
+    private javax.swing.JTextField jTel;
     // End of variables declaration//GEN-END:variables
 }
