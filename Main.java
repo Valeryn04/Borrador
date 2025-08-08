@@ -1,3 +1,4 @@
+
 package com.mycompany.ventanaagroclientes;
 
 import com.mycompany.ventanaagroclientes.vista.JFramePrincipal;
